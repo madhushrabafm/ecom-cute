@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+const img = "/lunadecora.jpeg";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="bg-gray-50 border-t border-gray-200 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,13 +10,11 @@ const Footer: React.FC = () => {
           {/* Brand & Socials */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-3xl font-serif font-bold mb-6 tracking-tighter">
-                GS
-              </h3>
+              <img src={img} className="h-12 w-12 rounded-full" alt="" />
               <p className="text-sm text-vogue-500 leading-relaxed font-light">
-                Global Style Collective. A curated house of iconic labels and
-                refined essentials, bringing high-performance craft to the
-                modern wardrobe.
+                Luna Decor. A curated house of iconic labels and refined
+                essentials, bringing high-performance craft to the modern
+                wardrobe.
               </p>
             </div>
 

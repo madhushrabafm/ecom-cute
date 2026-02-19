@@ -1,9 +1,10 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useApp } from "../App";
 import { LAUNCH_PROMOS } from "../constants";
 import { X } from "lucide-react";
+
+const logo = "/lunadecora.jpeg";
 
 const Navbar: React.FC = () => {
   const { cart, wishlist, user, setIsStyleAssistantOpen } = useApp();
@@ -58,13 +59,18 @@ const Navbar: React.FC = () => {
       <nav
         className={`fixed top-0 max-md:mt-5 w-full z-50 transition-all duration-500 ${scrolled ? "bg-white shadow-sm py-2 translate-y-0 text-black" : "text-black bg-transparent py-4 md:translate-y-6"}`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="  md:px-12 px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             <Link
               to="/"
               className={`text-2xl md:text-3xl text-pink-800 font-serif font-bold tracking-tighter transition-colors duration-500 ${scrolled ? "text-black" : "text-black"}`}
             >
-             Luna Decor
+              {/* Luna Decor */}
+              <img
+                src={logo}
+                alt="Luna Decor Logo"
+                className="rounded-full w-8 h-8"
+              />
             </Link>
 
             <div
@@ -80,10 +86,10 @@ const Navbar: React.FC = () => {
                 Women
               </Link>
               <Link
-                to="/shop?category=Men"
+                to="/shop?category=Trays"
                 className="hover:opacity-50 transition-all"
               >
-                Men
+                Trays
               </Link>
               <Link
                 to="/shop?category=Accessories"
@@ -94,7 +100,7 @@ const Navbar: React.FC = () => {
             </div>
 
             <div
-              className={`flex items-center space-x-8 transition-colors duration-500 ${scrolled ? "text-black" : "text-black"}`}
+              className={`flex items-center space-x-4 md:space-x-8 transition-colors duration-500 ${scrolled ? "text-black" : "text-black"}`}
             >
               <button
                 onClick={() => setIsStyleAssistantOpen(true)}
@@ -110,17 +116,8 @@ const Navbar: React.FC = () => {
               >
                 <i className="fa-solid fa-magnifying-glass text-lg"></i>
               </button>
-              <Link
-                to="/profile"
-                onClick={(e) => handleProtectedNavigation(e, "/profile")}
-                className="hover:scale-110 transition-transform relative"
-              >
-                <i className="fa-regular fa-user text-lg"></i>
-                {user && (
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full border-2 border-white"></span>
-                )}
-              </Link>
-              <Link
+
+              {/* <Link
                 to="/profile?tab=wishlist"
                 onClick={(e) => handleProtectedNavigation(e, "/profile")}
                 className="hover:scale-110 transition-transform relative"
@@ -131,7 +128,7 @@ const Navbar: React.FC = () => {
                     {wishlist.length}
                   </span>
                 )}
-              </Link>
+              </Link> */}
               <Link
                 to="/cart"
                 className="hover:scale-110 transition-transform relative"
@@ -141,6 +138,16 @@ const Navbar: React.FC = () => {
                   <span className="absolute -top-3 -right-3 bg-black text-white text-[8px] w-5 h-5 rounded-full flex items-center justify-center font-black border-2 border-white">
                     {cartCount}
                   </span>
+                )}
+              </Link>
+              <Link
+                to="/profile"
+                onClick={(e) => handleProtectedNavigation(e, "/profile")}
+                className="hover:scale-110 transition-transform relative"
+              >
+                <i className="fa-regular fa-user text-lg"></i>
+                {user && (
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full border-2 border-white"></span>
                 )}
               </Link>
             </div>

@@ -13,7 +13,7 @@ const OurStory: React.FC = () => {
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative text-center px-4">
           <h1 className="text-white text-5xl md:text-8xl font-serif font-bold mb-4 tracking-tighter">
-            The Luna DecorStory
+            The Luna Decor Story
           </h1>
           <p className="text-white/60 text-lg uppercase tracking-[0.4em] max-w-2xl mx-auto font-light">
             Curation Meets Excellence
@@ -33,10 +33,10 @@ const OurStory: React.FC = () => {
         </p>
         <div className="space-y-8 text-vogue-500 text-lg leading-relaxed text-justify font-light">
           <p>
-            Started as a boutique concept in Bangalore, Global Style (GS)
-            quickly evolved into India's most trusted fashion collective. Our
-            vision was to move away from the 'everything-store' model and focus
-            on a curated selection of brands that define quality.
+            Started as a boutique concept in Kolkata, Luna Decor quickly evolved
+            into India's most trusted fashion collective. Our vision was to move
+            away from the 'everything-store' model and focus on a curated
+            selection of brands that define quality.
           </p>
           <p>
             Today, Luna Decor represents a bridge between high-street global

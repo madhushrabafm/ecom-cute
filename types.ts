@@ -1,8 +1,7 @@
-
 export interface Product {
   id: string;
   name: string;
-  category: 'Men' | 'Women' | 'Kids' | 'Accessories';
+  category: "Women" | "Trays" | "Accessories";
   subcategory: string;
   price: number;
   originalPrice?: number;
@@ -19,16 +18,16 @@ export interface Product {
 }
 
 export interface Message {
-  role: 'ai' | 'user';
+  role: "ai" | "user";
   text: string;
   attachedProduct?: Product;
-  type?: 'text' | 'styling-tip' | 'weather-alert';
+  type?: "text" | "styling-tip" | "weather-alert";
 }
 
 export interface StyleProfile {
   aesthetic: string;
   preferredColors: string[];
-  sizePreference: 'Slim' | 'Regular' | 'Oversized';
+  sizePreference: "Slim" | "Regular" | "Oversized";
 }
 
 export interface Review {
@@ -74,7 +73,7 @@ export interface Order {
   date: string;
   items: CartItem[];
   total: number;
-  status: 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
+  status: "Processing" | "Shipped" | "Delivered" | "Cancelled";
 }
 
-export type AuthMode = 'login' | 'signup' | 'forgot-password';
+export type AuthMode = "login" | "signup" | "forgot-password";

@@ -1,4 +1,3 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import { Product, StyleProfile } from "../types";
 
@@ -14,7 +13,7 @@ export async function getFashionAdvice(
   },
 ) {
   try {
-    const systemPrompt = `You are a world-class fashion concierge and stylist for "Luna Decor- Global Style Collective". 
+    const systemPrompt = `You are a world-class fashion concierge and stylist for "Luna Decor". 
     Your tone is sophisticated, editorial, and helpful. 
     Current Trends: Minimalism, 90s heritage revival, sustainable luxury, and technical sportswear.
     

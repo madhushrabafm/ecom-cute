@@ -1,6 +1,6 @@
 import { Product, Review } from "./types";
 
-export const CATEGORIES = ["Men", "Womens", "Kids", "Accessories"] as const;
+export const CATEGORIES = ["Womens", "Trays", "Accessories"] as const;
 
 export const LAUNCH_PROMOS = [
   {
