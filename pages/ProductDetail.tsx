@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
+import { X, RotateCcw, ZoomIn, Heart, Facebook, Twitter, Star, PenTool, Camera, ThumbsUp } from "lucide-react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { MOCK_PRODUCTS, LAUNCH_PROMOS, MOCK_REVIEWS } from "../constants";
 import { useApp } from "../App";
@@ -211,7 +212,7 @@ const ProductDetail: React.FC = () => {
               onClick={() => setShowSizeGuide(false)}
               className="absolute top-6 right-6 text-gray-400 hover:text-black transition-colors"
             >
-              <i className="fa-solid fa-xmark text-xl"></i>
+              <X className="text-xl" />
             </button>
             <h2 className="text-3xl font-serif font-bold mb-8">
               Official Size Chart
@@ -308,7 +309,7 @@ const ProductDetail: React.FC = () => {
                   onClick={() => setIs360Active(true)}
                   className={`flex-shrink-0 w-16 lg:w-20 aspect-[3/4] flex flex-col items-center justify-center gap-2 border-2 transition-all ${is360Active ? "border-black bg-black text-white shadow-md" : "border-gray-100 bg-gray-50 text-gray-400 hover:border-black hover:text-black"}`}
                 >
-                  <i className="fa-solid fa-rotate text-lg"></i>
+                  <RotateCcw className="w-5 h-5 mb-1" />
                   <span className="text-[8px] font-bold uppercase tracking-widest">
                     360° View
                   </span>
@@ -337,7 +338,7 @@ const ProductDetail: React.FC = () => {
 
                   <div className="absolute bottom-6 left-6 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="bg-black/60 backdrop-blur-md px-4 py-2 text-white text-[8px] font-bold uppercase tracking-widest flex items-center gap-3 rounded-full">
-                      <i className="fa-solid fa-magnifying-glass-plus"></i>
+                      <ZoomIn className="w-4 h-4" />
                       Click to Zoom
                     </div>
                   </div>
@@ -350,9 +351,7 @@ const ProductDetail: React.FC = () => {
                       }}
                       className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg hover:scale-110 transition-all"
                     >
-                      <i
-                        className={`${isWishlisted ? "fa-solid text-red-500" : "fa-regular"} fa-heart text-xl`}
-                      ></i>
+                      <Heart className={`w-5 h-5 ${isWishlisted ? "fill-red-500 text-red-500" : "text-black"}`} />
                     </button>
                   </div>
                 </>
@@ -454,13 +453,13 @@ const ProductDetail: React.FC = () => {
                   onClick={() => handleShare("facebook")}
                   className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-100 hover:text-blue-600 hover:border-blue-600 transition-all"
                 >
-                  <i className="fa-brands fa-facebook-f text-sm"></i>
+                  <Facebook className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => handleShare("twitter")}
                   className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-100 hover:text-sky-400 hover:border-sky-400 transition-all"
                 >
-                  <i className="fa-brands fa-x-twitter text-sm"></i>
+                  <Twitter className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => handleShare("copy")}
@@ -487,10 +486,10 @@ const ProductDetail: React.FC = () => {
             <div className="flex items-center gap-4">
               <div className="flex text-black text-sm">
                 {[...Array(5)].map((_, i) => (
-                  <i
+                  <Star
                     key={i}
-                    className={`fa-solid fa-star ${i < Math.floor(product.rating) ? "text-black" : "text-gray-100"}`}
-                  ></i>
+                    className={`w-4 h-4 ${i < Math.floor(product.rating) ? "fill-black text-black" : "text-gray-200"}`}
+                  />
                 ))}
               </div>
               <span className="text-sm font-bold">{product.rating} / 5.0</span>
@@ -503,9 +502,7 @@ const ProductDetail: React.FC = () => {
             onClick={() => setIsWritingReview(!isWritingReview)}
             className="bg-black text-white px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-zinc-800 transition-all flex items-center gap-3 shadow-xl"
           >
-            <i
-              className={`fa-solid ${isWritingReview ? "fa-xmark" : "fa-pen-nib"} text-xs`}
-            ></i>
+            {isWritingReview ? <X className="w-4 h-4" /> : <PenTool className="w-4 h-4" />}
             {isWritingReview ? "Cancel Review" : "Write a Review"}
           </button>
         </div>
@@ -527,7 +524,7 @@ const ProductDetail: React.FC = () => {
                       }
                       className={`text-xl transition-colors ${newReview.rating >= star ? "text-black" : "text-gray-200"}`}
                     >
-                      <i className="fa-solid fa-star"></i>
+                      <Star className={`w-5 h-5 ${newReview.rating >= star ? "fill-black text-black" : "text-gray-200"}`} />
                     </button>
                   ))}
                 </div>
@@ -573,7 +570,7 @@ const ProductDetail: React.FC = () => {
                         }
                         className="absolute -top-2 -right-2 bg-black text-white w-5 h-5 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
                       >
-                        <i className="fa-solid fa-xmark text-[10px]"></i>
+                        <X className="w-3 h-3" />
                       </button>
                     </div>
                   ))}
@@ -582,7 +579,7 @@ const ProductDetail: React.FC = () => {
                     onClick={() => fileInputRef.current?.click()}
                     className="w-20 h-20 border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-400 hover:text-black hover:border-black transition-all"
                   >
-                    <i className="fa-solid fa-camera text-xl mb-1"></i>
+                    <Camera className="w-5 h-5 mb-1" />
                     <span className="text-[8px] font-bold uppercase">
                       Upload
                     </span>
@@ -625,11 +622,11 @@ const ProductDetail: React.FC = () => {
                 </div>
                 <div className="flex text-black text-[9px]">
                   {[...Array(5)].map((_, i) => (
-                    <i
-                      key={i}
-                      className={`fa-solid fa-star ${i < review.rating ? "text-black" : "text-gray-100"}`}
-                    ></i>
-                  ))}
+                      <Star
+                        key={i}
+                        className={`w-3 h-3 ${i < review.rating ? "fill-black text-black" : "text-gray-200"}`}
+                      />
+                    ))}
                 </div>
               </div>
               <p className="text-sm text-gray-600 font-light italic leading-relaxed">
@@ -655,7 +652,7 @@ const ProductDetail: React.FC = () => {
                   onClick={() => handleHelpful(review.id)}
                   className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-widest text-vogue-500 hover:text-black transition-colors"
                 >
-                  <i className="fa-regular fa-thumbs-up"></i>
+                  <ThumbsUp className="w-4 h-4" />
                   Helpful ({review.helpfulCount || 0})
                 </button>
                 <span className="text-[9px] font-bold uppercase tracking-widest text-vogue-100 group-hover:text-vogue-500 transition-colors">

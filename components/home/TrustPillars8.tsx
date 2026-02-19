@@ -1,3 +1,4 @@
+import { Handbag } from "lucide-react";
 import React from "react";
 
 const TrustPillars8 = () => {
@@ -33,7 +34,7 @@ const TrustPillars8 = () => {
         </div>
         <div className="space-y-8 group">
           <div className="w-24 h-24 bg-vogue-50 flex items-center justify-center mx-auto rounded-full group-hover:bg-black group-hover:text-white transition-all duration-700">
-            <i className="fa-solid fa-sparkles text-2xl"></i>
+            <Handbag />
           </div>
           <div className="space-y-4">
             <h4 className="text-sm font-bold uppercase tracking-[0.4em]">
