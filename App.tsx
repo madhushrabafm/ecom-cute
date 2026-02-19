@@ -45,6 +45,7 @@ import Contact from './pages/Contact';
 import Shipping from './pages/Shipping';
 import Returns from './pages/Returns';
 import TrackOrder from './pages/TrackOrder';
+import HomePage from './pages/HomePage';
 
 // --- Redux-Backed Hook ---
 export const useApp = () => {
@@ -160,7 +161,7 @@ function AppContent() {
         <Navbar />
         <main className="flex-grow pt-16">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/auth" element={<Auth />} />
             
