@@ -14,7 +14,7 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) => 
     getDefaultMiddleware({
-      serializableCheck: false, // Useful for storing non-serializable objects like Supabase user if necessary
+      serializableCheck: false, // Useful for storing non-serializable objects like Supa base user if necessary
     }),
 });
 
