@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { MOCK_PRODUCTS, LAUNCH_PROMOS } from "../constants";
-import ProductCard from "../components/ProductCard";
-import { useApp } from "../App";
+import { MOCK_PRODUCTS, LAUNCH_PROMOS } from "../../constants";
+import ProductCard from "../../components/ProductCard";
+import { useApp } from "../../App";
 
 const Home: React.FC = () => {
   const { setIsStyleAssistantOpen, userStyleProfile } = useApp();
