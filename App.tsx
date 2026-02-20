@@ -34,9 +34,9 @@ import { MOCK_PRODUCTS } from "./constants";
 // --- Components ---
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/grrrr/Home";
-import Shop from "./pages/grrrr/Shop";
-import ProductDetail from "./pages/ProductDetail";
+// import Home from "./pages/grrrr/Home";
+// import Shop from "./pages/grrrr/Shop";
+// import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Auth from "./pages/Auth";
 import Profile from "./pages/Profile";
@@ -53,6 +53,7 @@ import Returns from "./pages/Returns";
 import TrackOrder from "./pages/TrackOrder";
 import HomePage from "./pages/yasss/HomePage";
 import ShopPage from "./pages/yasss/ShopPage";
+import ProductsDetailsPage from "./pages/yasss/ProductsDetailsPage";
 
 // --- Redux-Backed Hook ---
 export const useApp = () => {
@@ -211,7 +212,7 @@ function AppContent() {
             <Route path="/auth" element={<Auth />} />
 
             {/* Freely view products */}
-            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/product/:id" element={<ProductsDetailsPage />} />
 
             {/* Freely manage bag */}
             <Route path="/cart" element={<Cart />} />

@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { X, RotateCcw, ZoomIn, Heart, Facebook, Twitter, Star, PenTool, Camera, ThumbsUp } from "lucide-react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { MOCK_PRODUCTS, LAUNCH_PROMOS, MOCK_REVIEWS } from "../constants";
-import { useApp } from "../App";
-import ProductCard from "../components/ProductCard";
-import ProductSkeleton from "../components/ProductSkeleton";
-import { getRelatedPairings } from "../services/gemini";
-import { Product, Review } from "../types";
-import Product360View from "../components/Product360View";
+import { MOCK_PRODUCTS, LAUNCH_PROMOS, MOCK_REVIEWS } from "../../constants";
+import { useApp } from "../../App";
+import ProductCard from "../../components/ProductCard";
+import ProductSkeleton from "../../components/ProductSkeleton";
+import { getRelatedPairings } from "../../services/gemini";
+import { Product, Review } from "../../types";
+import Product360View from "../../components/Product360View";
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams();
