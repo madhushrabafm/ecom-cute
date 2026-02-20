@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
               <img
                 src={logo}
                 alt="Luna Decor Logo"
-                className="rounded-full w-16 h-16"
+                className="rounded-full w-16 md:w-20 h-16 md:h-20"
               />
             </Link>
 
