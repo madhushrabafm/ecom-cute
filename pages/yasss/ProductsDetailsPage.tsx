@@ -147,7 +147,7 @@ const ProductsDetailsPage: React.FC = () => {
         />
       </div>
 
-      <ProductReviews
+      {/* <ProductReviews
         product={product}
         reviews={reviews}
         setReviews={setReviews}
@@ -155,7 +155,7 @@ const ProductsDetailsPage: React.FC = () => {
         navigate={navigate}
       />
 
-      <ProductBrandPartners />
+      <ProductBrandPartners /> */}
 
       <ProductPairings
         aiCuratedPairings={aiCuratedPairings}

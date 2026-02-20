@@ -65,7 +65,7 @@ const ProductInfo: React.FC<Props> = ({
           </h1>
 
           <div className="flex items-center gap-4">
-            <span className="text-3xl font-black tracking-tighter">
+            <span className="text-3xl font-medium tracking-tighter">
               ₹{product.price.toLocaleString("en-IN")}
             </span>
 

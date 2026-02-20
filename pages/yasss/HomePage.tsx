@@ -12,7 +12,8 @@ const HomePage: React.FC = () => {
   return (
     <div className="animate-in fade-in duration-1000 overflow-hidden">
       <Landing1 />
-      <LaunchSpotlight2 />
+      {/* <LaunchSpotlight2 /> */}
+      <TrendingCollections7 />
       <StyleConcierge3 />
       <FeaturedBrands4 />
       <FlagshipStore5 />

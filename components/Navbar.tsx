@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useApp } from "../App";
 import { LAUNCH_PROMOS } from "../constants";
-import { X } from "lucide-react";
+import { X, Search, ShoppingBag, User, Sparkles } from "lucide-react";
 
 const logo = "/lunadecora.jpeg";
 
@@ -57,24 +57,24 @@ const Navbar: React.FC = () => {
       </div>
 
       <nav
-        className={`fixed top-0 max-md:mt-5 w-full z-50 transition-all duration-500 ${scrolled ? "bg-white shadow-sm py-2 translate-y-0 text-black" : "text-black bg-transparent py-4 md:translate-y-6"}`}
+        className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-black/80 backdrop-blur-sm shadow-sm py-2 translate-y-0 text-white" : "text-white bg-black py-4 md:translate-y-6 max-md:mt-6"}`}
       >
         <div className="  md:px-12 px-4 sm:px-6">
           <div className="flex justify-between items-center h-16">
             <Link
               to="/"
-              className={`text-2xl md:text-3xl text-pink-800 font-serif font-bold tracking-tighter transition-colors duration-500 ${scrolled ? "text-black" : "text-black"}`}
+              className={`text-2xl md:text-3xl font-serif font-bold tracking-tighter transition-colors duration-500 text-white`}
             >
               {/* Luna Decor */}
               <img
                 src={logo}
                 alt="Luna Decor Logo"
-                className="rounded-full w-8 h-8"
+                className="rounded-full w-16 h-16"
               />
             </Link>
 
             <div
-              className={`hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.3em] transition-colors duration-500 ${scrolled ? "text-black" : "text-black"}`}
+              className={`hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.3em] transition-colors duration-500 text-white`}
             >
               <Link to="/shop" className="hover:opacity-50 transition-all">
                 New Arrivals
@@ -100,21 +100,21 @@ const Navbar: React.FC = () => {
             </div>
 
             <div
-              className={`flex items-center space-x-4 md:space-x-8 transition-colors duration-500 ${scrolled ? "text-black" : "text-black"}`}
+              className={`flex items-center space-x-4 md:space-x-8 transition-colors duration-500 text-white`}
             >
               <button
                 onClick={() => setIsStyleAssistantOpen(true)}
                 className="hover:scale-110 transition-transform group relative"
                 title="Style Concierge"
               >
-                <i className="fa-solid fa-wand-magic-sparkles text-lg"></i>
-                <span className="absolute -top-1 -right-1 w-2 h-2 bg-black rounded-full animate-ping group-hover:hidden"></span>
+                <Sparkles className="w-5 h-5" />
+                <span className="absolute -top-1 -right-1 w-2 h-2 bg-white rounded-full animate-ping group-hover:hidden"></span>
               </button>
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
                 className="hover:scale-110 transition-transform"
               >
-                <i className="fa-solid fa-magnifying-glass text-lg"></i>
+                <Search className="w-5 h-5" />
               </button>
 
               {/* <Link
@@ -133,9 +133,9 @@ const Navbar: React.FC = () => {
                 to="/cart"
                 className="hover:scale-110 transition-transform relative"
               >
-                <i className="fa-solid fa-bag-shopping text-lg"></i>
+                <ShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-3 -right-3 bg-black text-white text-[8px] w-5 h-5 rounded-full flex items-center justify-center font-black border-2 border-white">
+                  <span className="absolute -top-3 -right-3 bg-white text-black text-[8px] w-5 h-5 rounded-full flex items-center justify-center font-black border-2 border-black">
                     {cartCount}
                   </span>
                 )}
@@ -145,9 +145,9 @@ const Navbar: React.FC = () => {
                 onClick={(e) => handleProtectedNavigation(e, "/profile")}
                 className="hover:scale-110 transition-transform relative"
               >
-                <i className="fa-regular fa-user text-lg"></i>
+                <User className="w-5 h-5" />
                 {user && (
-                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full border-2 border-white"></span>
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full border-2 border-black"></span>
                 )}
               </Link>
             </div>

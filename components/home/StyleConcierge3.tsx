@@ -12,8 +12,8 @@ const StyleConcierge3 = () => {
             <span className="text-vogue-500 text-xs font-bold uppercase tracking-[0.6em]">
               Intelligent Curation
             </span>
-            <h2 className="text-6xl md:text-7xl font-serif font-bold tracking-tight leading-[0.9]">
-              Meet Your <br /> Personal Stylist.
+            <h2 className="text-6xl md:text-7xl capitalize font-serif font-bold tracking-tight leading-[0.9]">
+              shop from our <br /> top category.
             </h2>
           </div>
           <p className="text-xl text-white/40 font-light leading-relaxed max-w-md italic font-serif">
